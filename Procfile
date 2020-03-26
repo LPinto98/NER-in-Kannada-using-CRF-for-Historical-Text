@@ -1,1 +1,1 @@
-web: gunicorn ner.wsgi --log-file
+web: gunicorn ner.wsgi --log-file -
