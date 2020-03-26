@@ -64,7 +64,6 @@ python-dateutil==2.8.0
 pyttsx==1.1
 pyttsx3==2.71
 pytz==2019.1
-pywin32==224
 PyYAML==5.3
 QtPy==1.9.0
 regex==2019.6.8
