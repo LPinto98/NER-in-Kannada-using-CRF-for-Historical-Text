@@ -1,0 +1,109 @@
+<html>
+    <head>
+        {% load static %}
+        <title>Historical Data NER</title>
+        <!-- <meta charset="utf-8"> -->
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <link rel="shortcut icon" type="image/x-icon" href="{% static 'leaf.png' %}">
+        <!-- PUT THE LEAF.PNG IN YOUR STATIC FOLDER AND CHANGE THE ABOVE HREF TO GET THE ICON! -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+        <style type="text/css">
+            @import url('https://fonts.googleapis.com/css?family=Comfortaa&display=swap');
+
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            body{
+                font-family:'Comfortaa', cursive;
+                background: url('https://images.unsplash.com/photo-1547009324-9d5fbc5f7fc6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80') no-repeat fixed bottom center/cover;
+            }
+            .btn {
+                width: 100px;
+                height: 45px;
+                letter-spacing: 2.5px;
+                color: #10a123;
+                background-color: transparent;
+                border: none;
+                border-radius: 45px;
+                /*box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);*/
+                transition: all 0.3s ease 0s;
+                cursor: pointer;
+                outline: none;
+                margin-left: 4px;
+            }
+
+            .btn:hover {
+                background-color:#10a123;
+                /* box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4); */
+                box-shadow: 0px 5px 10px rgba(68, 174, 255, 0.6); 
+                color: #fff;
+                transform: translateY(-7px);
+            }
+            label{
+                margin-top:0.7rem;
+                margin-bottom: 0.4rem;
+                font-size:1.5rem; 
+            }
+            .shade {
+              border: 1px solid;
+              padding: 10px;
+              /*box-shadow: 6px 7px 20px rgba(46, 229, 157, 0.4);*/
+              box-shadow: 6px 7px 20px rgba(255,255,255, 0.4);
+            }
+            h1{
+                font-size:5rem;
+                text-shadow: 1px 5px 8px rgba(255,255,255, 0.7);
+                color: white;
+            }
+            textarea{
+                font-weight: 700;
+                color: #333;
+                overflow: auto;
+                resize: none;
+                width: 80%;
+                outline: none;
+                border: none;
+                border-bottom: 2px solid #10a123;
+                border-radius: 5px;
+                padding: 2%;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container mt-5 mb-5 text-center">
+            <h1>NER in Kannada</h1>
+        </div>          
+        <div class="container card p-4 mb-5 shade text-center">
+            <h2>Type away in Kannada!</h2>
+            <form method="POST" class="mt-4" enctype="multipart/form-data">
+                <div class="form-group container">
+                    {% csrf_token %}
+                    {% for field in form %}
+                        <div class="fieldWrapper">
+                            {{ field.errors }}
+                            <b>{{ field.label_tag }}</b><br>{{ field }}
+                            {% if field.help_text %}
+                            <p class="text-danger help">{{ field.help_text|safe }}</p>
+                            {% endif %}
+                        </div>
+                        <br>
+                    {% endfor %}
+                    </div>
+                <button type="submit" class="mb-5 btn btn-primary"><i class="fas fa-check-circle fa-2x" ></i></button>
+              </form>
+              <div class="container text-center">
+                {%if text%}
+                    {% for line in text %}
+                        <p>{{line}}</p>
+                    {% endfor %}
+                {%endif%}
+            </div>
+        </div>
+    </body>
+</html>
