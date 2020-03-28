@@ -285,7 +285,7 @@ with open(os.path.join(BASE_DIR,'main/output.txt'), mode='r',encoding='utf-8') a
         elif(l[4] in rol):
             rolop.append(l[2])
 with open(os.path.join(BASE_DIR,'main/op.txt'), mode='w+', encoding='utf-8') as f:
-	f.write(u"Numbers:\n"+str(numop)+"\nCom:\n"+str(comop)+"\nlocation:\n"+str(locop)+"\ndate:\n"+str(dateop)+"\norganization:\n"+str(orgop)+"\nperson:\n"+str(perop)+"\nrole:\n"+str(rolop))
+	f.write(u"Numbers:\n"+str(numop)+"\nCommunity:\n"+str(comop)+"\nLocation:\n"+str(locop)+"\nDate:\n"+str(dateop)+"\nOrganization:\n"+str(orgop)+"\nPerson:\n"+str(perop)+"\nRole:\n"+str(rolop))
 	f.close()
 
 # op=str("Numbers: "+str(numop)+" Com:"+str(comop)+" location:"+str(locop)+" date:"+str(dateop)+" organization:"+str(orgop)+" person:"+str(perop)+" role:"+str(rolop)).encode('utf-8')
