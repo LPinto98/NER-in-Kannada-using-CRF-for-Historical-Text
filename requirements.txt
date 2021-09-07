@@ -4,7 +4,7 @@ astor==0.8.1
 astroid==2.3.3
 backports.functools-lru-cache==1.5
 beautifulsoup4==4.7.1
-bottle==0.12.17
+bottle>=0.12.19
 bottle-websocket==0.2.9
 bs4==0.0.1
 certifi==2019.6.16
@@ -53,7 +53,7 @@ public==2019.4.13
 pycparser==2.19
 pycryptodome==3.9.4
 PyGetWindow==0.0.7
-Pygments==2.4.2
+Pygments>=2.7.4
 pylint==2.4.4
 pyparsing==2.4.2
 PyRect==0.1.4
@@ -63,7 +63,7 @@ python-dateutil==2.8.0
 pyttsx==1.1
 pyttsx3==2.71
 pytz==2019.1
-PyYAML==5.3
+PyYAML>=5.4
 QtPy==1.9.0
 regex==2019.6.8
 requests==2.22.0
@@ -88,7 +88,7 @@ tk-tools==0.11.0
 tqdm==4.43.0
 tropo==0.2.1
 typed-ast==1.4.1
-urllib3==1.25.3
+urllib3>=1.26.5
 virtualenv==16.6.2
 virtualenvwrapper-win==1.2.5
 Wand==0.5.7
